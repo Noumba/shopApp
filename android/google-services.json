@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "243373093298",
+    "firebase_url": "https://myshop-b6eac-default-rtdb.firebaseio.com",
+    "project_id": "myshop-b6eac",
+    "storage_bucket": "myshop-b6eac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243373093298:android:9fd7b60d622d0eb70734ab",
+        "android_client_info": {
+          "package_name": "com.davincishop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243373093298-lt97p58qp2q0q5dub7l76p2q0gm904jg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8F8fkH6iTQEWUS4VeZUhoPhbACnW0ieQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243373093298-lt97p58qp2q0q5dub7l76p2q0gm904jg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
