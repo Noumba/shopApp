@@ -1,7 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 //import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 import 'product.dart';
 
@@ -80,10 +81,10 @@ class Productsproviders with ChangeNotifier {
     return _items.firstWhere((prod) => prod.id == id);
   }
 
-  void addProduct(Product product) {
+  Future<void> addProduct(Product product) async {
     final url =
         Uri.https('myshop-b6eac-default-rtdb.firebaseio.com', '/products.json');
-    http
+    await http
         .post(url,
             body: json.encode({
               'title': product.title,
@@ -95,6 +96,8 @@ class Productsproviders with ChangeNotifier {
         .then((response) {
       _items.add(product);
       notifyListeners();
+    }).catchError((onError) {
+      throw (onError);
     });
     final url2 = Uri.parse(
         'https://myshop-b6eac-default-rtdb.firebaseio.com/product.json');
