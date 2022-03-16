@@ -20,19 +20,12 @@ class ProductItem extends StatelessWidget {
 
     return ClipRRect(
       child: GridTile(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.of(context).pushNamed(ProductDetailsScreen.routeName,
-                arguments: product.id);
-          },
-          child: Image.network(
-            product.url,
-            fit: BoxFit.cover,
+        header: GridTileBar(
+          backgroundColor: Colors.black12,
+          title: const SizedBox(
+            width: 20.0,
+            child: Text(''),
           ),
-        ),
-        footer: GridTileBar(
-          title: Text(product.title),
-          backgroundColor: Colors.black54,
           leading: IconButton(
               onPressed: () {
                 product.toogleFavoriteStatus();
@@ -58,6 +51,20 @@ class ProductItem extends StatelessWidget {
                 ));
               },
               icon: const Icon(Icons.shopping_cart_outlined)),
+        ),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushNamed(ProductDetailsScreen.routeName,
+                arguments: product.id);
+          },
+          child: Image(
+            image: AssetImage(product.url),
+            fit: BoxFit.cover,
+          ),
+        ),
+        footer: GridTileBar(
+          title: Center(child: Text(product.title)),
+          backgroundColor: Colors.black54,
         ),
       ),
     );

@@ -10,34 +10,73 @@ class Productsproviders with ChangeNotifier {
   final List<Product> _items = [
     Product(
       id: 'p1',
-      title: 'Red Shirt',
-      description: 'A red shirt - it is pretty red!',
-      price: 29.99,
-      url:
-          'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+      title: 'Female jogging',
+      description: 'Warm and cozy - exactly what you need for the winter.',
+      price: 19.99,
+      url: 'asset/shorts2.jpg',
     ),
     Product(
       id: 'p2',
-      title: 'Trousers',
-      description: 'A nice pair of trousers.',
-      price: 59.99,
-      url:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Trousers%2C_dress_%28AM_1960.022-8%29.jpg/512px-Trousers%2C_dress_%28AM_1960.022-8%29.jpg',
+      title: 'Dior Classic',
+      description: 'Warm and cozy - exactly what you need for the winter.',
+      price: 19.99,
+      url: 'asset/bag3.jpg',
     ),
     Product(
       id: 'p3',
-      title: 'Yellow Scarf',
+      title: 'Classic Blue',
       description: 'Warm and cozy - exactly what you need for the winter.',
       price: 19.99,
-      url: 'https://live.staticflickr.com/4043/4438260868_cc79b3369d_z.jpg',
+      url: 'asset/bag2.jpg',
     ),
     Product(
       id: 'p4',
-      title: 'A Pan',
+      title: 'LouisV bag',
+      description: 'Warm and cozy - exactly what you need for the winter.',
+      price: 19.99,
+      url: 'asset/bag1.jpg',
+    ),
+    Product(
+      id: 'p5',
+      title: 'Channel bag',
+      description: 'A red shirt - it is pretty red!',
+      price: 29.99,
+      url: 'asset/bag.jpg',
+    ),
+    Product(
+      id: 'p6',
+      title: 'Single Hand',
+      description: 'A nice pair of trousers.',
+      price: 59.99,
+      url: 'asset/gawn1.jpg',
+    ),
+    Product(
+      id: 'p7',
+      title: 'White Gawn',
+      description: 'Warm and cozy - exactly what you need for the winter.',
+      price: 19.99,
+      url: 'asset/gawn3.jpg',
+    ),
+    Product(
+      id: 'p8',
+      title: 'Black Angel',
       description: 'Prepare any meal you want.',
       price: 49.99,
-      url:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
+      url: 'asset/gawn13.jpg',
+    ),
+    Product(
+      id: 'p9',
+      title: 'White Nike',
+      description: 'Prepare any meal you want.',
+      price: 49.99,
+      url: 'asset/shoe1.jpg',
+    ),
+    Product(
+      id: 'p10',
+      title: 'Sneakers',
+      description: 'Prepare any meal you want.',
+      price: 49.99,
+      url: 'asset/shoe2.jpg',
     ),
   ];
 

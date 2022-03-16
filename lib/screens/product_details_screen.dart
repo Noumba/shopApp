@@ -13,19 +13,24 @@ class ProductDetailsScreen extends StatelessWidget {
     final product = Provider.of<Productsproviders>(context, listen: true)
         .findById(productId);
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(product.title),
+        elevation: 0.0,
+        backgroundColor: Colors.black12,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 1.0),
+              margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
               width: double.infinity,
-              height: 300,
-              child: Image.network(
-                product.url,
+              height: MediaQuery.of(context).size.height * 0.5,
+              decoration: BoxDecoration(border: Border.all(width: 0.0)),
+              child: Image(
+                image: AssetImage(product.url),
                 fit: BoxFit.cover,
+                width: double.infinity,
               ),
             ),
             const SizedBox(
@@ -44,7 +49,8 @@ class ProductDetailsScreen extends StatelessWidget {
               ),
               child: Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 2.0),
                 child: Text(
                   product.description,
                   softWrap: true,

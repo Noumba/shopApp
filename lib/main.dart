@@ -4,11 +4,10 @@ import 'package:mytech1/providers/orders.dart';
 import 'package:mytech1/screens/cart_screen.dart';
 import 'package:mytech1/screens/edit_product_screen.dart';
 import 'package:mytech1/screens/order_screen.dart';
-import 'package:mytech1/screens/user_products_screen.dart';
-import 'package:provider/provider.dart';
-
 import 'package:mytech1/screens/product_details_screen.dart';
 import 'package:mytech1/screens/product_overview_screens.dart';
+import 'package:mytech1/screens/user_products_screen.dart';
+import 'package:provider/provider.dart';
 
 import './providers/products_provider.dart';
 
@@ -44,7 +43,7 @@ class MyApp extends StatelessWidget {
           CartScreen.route: (ctx) => const CartScreen(),
           OrderScreen.routeName: (ctx) => const OrderScreen(),
           UserProductScreen.routeName: (ctx) => const UserProductScreen(),
-          EditProductScreen.routeName: (ctx) => const EditProductScreen()
+          EditProductScreen.routeName: (ctx) => const EditProductScreen(),
         },
       ),
     );
