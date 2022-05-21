@@ -17,7 +17,9 @@ class Product with ChangeNotifier {
       this.isFavorite = false});
 
   void toogleFavoriteStatus() {
+    final oldStatus = isFavorite;
     isFavorite = !isFavorite;
+    const url = 'myshop-b6eac-default-rtdb.firebaseio.com';
     notifyListeners();
   }
 }

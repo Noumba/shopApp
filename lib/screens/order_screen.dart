@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:mytech1/widgets/app_drawer.dart';
 import 'package:mytech1/widgets/order_item.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/orders.dart';
 
-class OrderScreen extends StatelessWidget {
+class OrderScreen extends StatefulWidget {
   static const routeName = '/orderScreen';
   const OrderScreen({Key? key}) : super(key: key);
 
   @override
+  State<OrderScreen> createState() => _OrderScreenState();
+}
+
+class _OrderScreenState extends State<OrderScreen>
+    with AutomaticKeepAliveClientMixin<OrderScreen> {
+  @override
   Widget build(BuildContext context) {
     final orderData = Provider.of<Orders>(context);
     return Scaffold(
-      drawer: const AppDrawer(),
-      appBar: AppBar(
-        title: const Text('Your Orders'),
-      ),
+      //drawer: const AppDrawer(),
       body: ListView.builder(
         reverse: true,
         itemBuilder: (context, index) =>
@@ -26,4 +28,8 @@ class OrderScreen extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

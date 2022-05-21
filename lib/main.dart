@@ -3,9 +3,11 @@ import 'package:mytech1/providers/cart.dart';
 import 'package:mytech1/providers/orders.dart';
 import 'package:mytech1/screens/cart_screen.dart';
 import 'package:mytech1/screens/edit_product_screen.dart';
+import 'package:mytech1/screens/login.dart';
 import 'package:mytech1/screens/order_screen.dart';
 import 'package:mytech1/screens/product_details_screen.dart';
 import 'package:mytech1/screens/product_overview_screens.dart';
+import 'package:mytech1/screens/register.dart';
 import 'package:mytech1/screens/user_products_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -37,8 +39,13 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
                 .copyWith(secondary: Colors.deepOrange)),
-        home: const ProductsOverviewScreen(),
+        // home: const ProductsOverviewScreen(),
+        home: const RegisterScreen(),
         routes: {
+          ProductsOverviewScreen.routeName: (ctx) =>
+              const ProductsOverviewScreen(),
+          RegisterScreen.routeName: (ctx) => const RegisterScreen(),
+          LoginScreen.routeName: (ctx) => const LoginScreen(),
           ProductDetailsScreen.routeName: (ctx) => const ProductDetailsScreen(),
           CartScreen.route: (ctx) => const CartScreen(),
           OrderScreen.routeName: (ctx) => const OrderScreen(),

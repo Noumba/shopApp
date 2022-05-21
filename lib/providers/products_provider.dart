@@ -11,7 +11,8 @@ class Productsproviders with ChangeNotifier {
     Product(
       id: 'p1',
       title: 'Female jogging',
-      description: 'Warm and cozy - exactly what you need for the winter.',
+      description:
+          'Warm and cozy - exactly what you need for the winter. Warm and cozy - exactly what you need for the winter Warm and cozy - exactly what you need for the winter',
       price: 19.99,
       url: 'asset/shorts2.jpg',
     ),
