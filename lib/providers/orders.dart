@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:mytech1/providers/cart.dart';
 
 class Orders with ChangeNotifier {
-  List<OrderItem> _orders = [];
+ final List<OrderItem> _orders = [];
 
   List<OrderItem> get orders {
     return [..._orders];
