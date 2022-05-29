@@ -61,15 +61,15 @@ class ProductItem extends StatelessWidget {
                 .pushNamed(ProductDetailsScreen.routeName, arguments: product);
           },
           child: Image(
-            image: AssetImage(product.url),
+            image: NetworkImage(product.url),
             fit: BoxFit.cover,
           ),
         ),
         footer: GridTileBar(
           trailing: IconButton(
               alignment: Alignment.bottomRight,
-              onPressed: () {
-                product.toogleFavoriteStatus();
+              onPressed: () async {
+                await product.toogleFavoriteStatus(product.id);
               },
               icon: Icon(
                 product.isFavorite

@@ -112,7 +112,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               height: MediaQuery.of(context).size.height * 0.55,
               decoration: BoxDecoration(border: Border.all(width: 0.0)),
               child: Image(
-                image: AssetImage(product.url),
+                image: NetworkImage(product.url),
                 fit: BoxFit.cover,
                 width: double.infinity,
               ),
@@ -155,7 +155,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                           value: productId,
                           child: Consumer<Product>(
                             builder: (BuildContext context, value, _) {
-                              return productDetailsFavIcon(
+                              return ProductDetailsFavIcon(
                                   productId: productId, product: product);
                             },
                             // child: productDetailsFavIcon(productId: productId, product: product),
@@ -277,8 +277,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   }
 }
 
-class productDetailsFavIcon extends StatelessWidget {
-  const productDetailsFavIcon({
+class ProductDetailsFavIcon extends StatelessWidget {
+  const ProductDetailsFavIcon({
     Key? key,
     required this.productId,
     required this.product,
@@ -291,8 +291,8 @@ class productDetailsFavIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
         alignment: Alignment.bottomRight,
-        onPressed: () {
-          productId.toogleFavoriteStatus();
+        onPressed: () async {
+          await productId.toogleFavoriteStatus(productId.id);
         },
         icon: Icon(
           productId.isFavorite

@@ -58,7 +58,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
       ProductOverview(showOnlyFavorites: _showOnlyFavorites),
       const CartScreen()
     ];
-    final productData = Provider.of<Productsproviders>(context);
+
     var height = MediaQuery.of(context).size.height;
     final _myColor =
         ColorScheme.fromSwatch(primarySwatch: Colors.purple).secondary;
@@ -448,8 +448,31 @@ class ProductOverview extends StatefulWidget {
 
 class _ProductOverviewState extends State<ProductOverview>
     with AutomaticKeepAliveClientMixin<ProductOverview> {
+  var _isInit = true;
+  var _isloading = false;
+
+  @override
+  void didChangeDependencies() async {
+    // TODO: implement didChangeDependencies
+    if (_isInit) {
+      setState(() {
+        _isloading = true;
+      });
+      Provider.of<Productsproviders>(context)
+          .fetchAndSetProducts()
+          .then((value) {
+        setState(() {
+          _isloading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final productData = Provider.of<Productsproviders>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
       child: CustomScrollView(
@@ -681,9 +704,13 @@ class _ProductOverviewState extends State<ProductOverview>
           ),
           SliverList(
               delegate: SliverChildListDelegate([
-            ProductsGrid(
-              showOnlyFavorites: widget._showOnlyFavorites,
-            ),
+            _isloading
+                ? Container(
+                    margin: const EdgeInsets.only(top: 50),
+                    child: const Center(child: CircularProgressIndicator()))
+                : ProductsGrid(
+                    showOnlyFavorites: widget._showOnlyFavorites,
+                  ),
           ]))
         ],
       ),
