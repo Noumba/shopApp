@@ -5,10 +5,16 @@ import 'package:provider/provider.dart';
 
 import '../widgets/cart_item.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
   static const route = '/cart';
   const CartScreen({Key? key}) : super(key: key);
 
+  @override
+  State<CartScreen> createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
+  var isLoading = false;
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context);
@@ -43,18 +49,34 @@ class CartScreen extends StatelessWidget {
                     ),
                     backgroundColor: Theme.of(context).primaryColor,
                   ),
-                  TextButton(
-                      onPressed: () {
-                        final orderItem = OrderItem(
-                            id: DateTime.now().toString(),
-                            amount: cart.totalAmount,
-                            products: cart.items.values.toList(),
-                            dateTime: DateTime.now());
-                        Provider.of<Orders>(context, listen: false)
-                            .addOrder(orderItem);
-                        cart.clearCart();
-                      },
-                      child: const Text('Make Order'))
+                  isLoading
+                      ? const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 25.0),
+                          child: Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        )
+                      : TextButton(
+                          onPressed: cart.totalAmount <= 0
+                              ? null
+                              : () async {
+                                  setState(() {
+                                    isLoading = !isLoading;
+                                  });
+                                  final orderItem = OrderItem(
+                                      id: DateTime.now().toString(),
+                                      amount: cart.totalAmount,
+                                      products: cart.items.values.toList(),
+                                      dateTime: DateTime.now());
+                                  await Provider.of<Orders>(context,
+                                          listen: false)
+                                      .addOrder(orderItem);
+                                  setState(() {
+                                    isLoading = !isLoading;
+                                  });
+                                  cart.clearCart();
+                                },
+                          child: const Text('Make Order'))
                 ],
               ),
             ),
