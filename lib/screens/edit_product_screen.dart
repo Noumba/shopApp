@@ -95,7 +95,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
         title: const Text('Edit Product'),
         actions: [
           IconButton(
-              onPressed: () {
+              onPressed: () async {
                 _saveForm();
                 setState(() {
                   _isLoading = true;
@@ -104,11 +104,11 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     Provider.of<Productsproviders>(context, listen: false)
                         .seachProduct(_editedProduct.id);
                 if (index >= 0) {
-                  Provider.of<Productsproviders>(context, listen: false)
+                  await Provider.of<Productsproviders>(context, listen: false)
                       .addEditedProduct(index, _editedProduct);
                   Navigator.pop(context);
                 } else {
-                  Provider.of<Productsproviders>(context, listen: false)
+                  await Provider.of<Productsproviders>(context, listen: false)
                       .addProduct(_editedProduct)
                       .catchError((error) {
                     showDialog(

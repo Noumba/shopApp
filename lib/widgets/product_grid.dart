@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/product_item.dart';
 import '../providers/products_provider.dart';
+import '../widgets/product_item.dart';
 
 class ProductsGrid extends StatefulWidget {
-  const ProductsGrid({required this.showOnlyFavorites, Key? key}):super(key: key);
+  const ProductsGrid({required this.showOnlyFavorites, Key? key})
+      : super(key: key);
   final bool showOnlyFavorites;
 
   @override
@@ -20,16 +21,18 @@ class _ProductsGridState extends State<ProductsGrid> {
         widget.showOnlyFavorites ? productsData.favorites : productsData.items;
 
     return GridView.builder(
+        physics: const ScrollPhysics(),
         itemCount: products.length,
+        shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 3 / 2,
-            crossAxisSpacing: 10,
+            childAspectRatio: 2 / 2.5,
+            crossAxisSpacing: 5,
             mainAxisSpacing: 10),
         itemBuilder: (context, index) {
           return ChangeNotifierProvider.value(
             value: products[index],
-            child: ProductItem(),
+            child: const ProductItem(),
           );
         });
   }

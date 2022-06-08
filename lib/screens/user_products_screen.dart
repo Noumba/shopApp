@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-
 import 'package:mytech1/providers/products_provider.dart';
 import 'package:mytech1/screens/edit_product_screen.dart';
-import 'package:mytech1/widgets/app_drawer.dart';
 import 'package:mytech1/widgets/user_product_item.dart';
 import 'package:provider/provider.dart';
 
 class UserProductScreen extends StatelessWidget {
   static const String routeName = '/userProductScreen';
-  const UserProductScreen({Key? key}) : super(key: key);
+  const UserProductScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final productData = Provider.of<Productsproviders>(context);
     return Scaffold(
-      drawer: const AppDrawer(),
+      //drawer: const AppDrawer(),
       appBar: AppBar(
         title: const Text('Your Products'),
         actions: [
