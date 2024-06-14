@@ -1,4 +1,4 @@
-import 'dart:ui';
+//import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,13 +9,13 @@ import 'package:mytech1/screens/order_screen.dart';
 import 'package:mytech1/screens/transaction_screen.dart';
 import 'package:mytech1/screens/user_products_screen.dart';
 import 'package:mytech1/screens/wishlist_screen.dart';
-import 'package:mytech1/widgets/badge.dart';
+import 'package:mytech1/widgets/badge.dart' as badge;
 import 'package:mytech1/widgets/product_grid.dart';
 import 'package:provider/provider.dart';
 
 import 'profile_screen.dart';
 
-enum filterOptions { Favorites, All }
+enum FilterOptions { favorites, all }
 
 class ProductsOverviewScreen extends StatefulWidget {
   const ProductsOverviewScreen({Key? key}) : super(key: key);
@@ -91,7 +91,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                   ),
                   builder: (_, cart, ch) => Padding(
                     padding: const EdgeInsets.only(left: 14),
-                    child: Badge(
+                    child: badge.Badge(
                         child: ch!,
                         value: cart.itemCount.toString(),
                         color: Colors.blue),
@@ -391,8 +391,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           //       color: Colors.blue),
           // ),
           PopupMenuButton(
-              onSelected: (filterOptions selectedValue) {
-                if (selectedValue == filterOptions.Favorites) {
+              onSelected: (FilterOptions selectedValue) {
+                if (selectedValue == FilterOptions.favorites) {
                   setState(() {
                     _showOnlyFavorites = true;
                   });
@@ -406,11 +406,11 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               itemBuilder: (_) => [
                     const PopupMenuItem(
                       child: Text('Show All'),
-                      value: filterOptions.All,
+                      value: FilterOptions.all,
                     ),
                     const PopupMenuItem(
                       child: Text('Only Favorites'),
-                      value: filterOptions.Favorites,
+                      value: FilterOptions.favorites,
                     )
                   ])
         ],
@@ -472,6 +472,7 @@ class _ProductOverviewState extends State<ProductOverview>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final productData = Provider.of<Productsproviders>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
@@ -538,10 +539,10 @@ class _ProductOverviewState extends State<ProductOverview>
                     child: Card(
                       color: Colors.white.withOpacity(0.8),
                       elevation: 3.0,
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const [
+                        children: [
                           Padding(
                             padding: EdgeInsets.all(10.0),
                             child: Image(
@@ -571,10 +572,10 @@ class _ProductOverviewState extends State<ProductOverview>
                     child: Card(
                       color: Colors.white.withOpacity(0.8),
                       elevation: 3.0,
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const [
+                        children: [
                           Padding(
                             padding: EdgeInsets.all(10.0),
                             child: Image(
@@ -604,10 +605,10 @@ class _ProductOverviewState extends State<ProductOverview>
                     child: Card(
                       color: Colors.white.withOpacity(0.8),
                       elevation: 3.0,
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const [
+                        children: [
                           Padding(
                             padding: EdgeInsets.all(10.0),
                             child: Image(
@@ -637,10 +638,10 @@ class _ProductOverviewState extends State<ProductOverview>
                     child: Card(
                       color: Colors.white.withOpacity(0.8),
                       elevation: 3.0,
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const [
+                        children: [
                           Padding(
                             padding: EdgeInsets.all(10.0),
                             child: Image(
@@ -670,10 +671,10 @@ class _ProductOverviewState extends State<ProductOverview>
                     child: Card(
                       color: Colors.white.withOpacity(0.8),
                       elevation: 3.0,
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const [
+                        children: [
                           Padding(
                             padding: EdgeInsets.all(0.0),
                             child: Image(
