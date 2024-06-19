@@ -14,7 +14,7 @@ class _AppDrawerState extends State<AppDrawer> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    final _myColor =
+    final myColor =
         ColorScheme.fromSwatch(primarySwatch: Colors.purple).secondary;
     return Drawer(
       backgroundColor: Colors.white,
@@ -23,7 +23,7 @@ class _AppDrawerState extends State<AppDrawer> {
           Container(
             height: height * 0.4,
             width: double.infinity,
-            color: _myColor,
+            color: myColor,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,7 +73,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         fontFamily: 'serif',
                         fontWeight: FontWeight.w500,
                         color: _tileSelected == 'profile'
-                            ? _myColor
+                            ? myColor
                             : Colors.grey[700]?.withOpacity(1.0)),
                   ),
                   onTap: () {
@@ -83,8 +83,8 @@ class _AppDrawerState extends State<AppDrawer> {
                   },
                   style: ListTileStyle.drawer,
                   selected: _tileSelected == 'profile',
-                  selectedColor: _myColor,
-                  selectedTileColor: _myColor.withOpacity(0.2),
+                  selectedColor: myColor,
+                  selectedTileColor: myColor.withOpacity(0.2),
                 ),
                 const Divider(
                   height: 0,
@@ -98,7 +98,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         fontFamily: 'serif',
                         fontWeight: FontWeight.w500,
                         color: _tileSelected == 'shop'
-                            ? _myColor
+                            ? myColor
                             : Colors.grey[700]?.withOpacity(1.0)),
                   ),
                   onTap: () {
@@ -108,8 +108,8 @@ class _AppDrawerState extends State<AppDrawer> {
                     widget.pageController.jumpToPage(2);
                   },
                   selected: _tileSelected == 'shop',
-                  selectedColor: _myColor,
-                  selectedTileColor: _myColor.withOpacity(0.2),
+                  selectedColor: myColor,
+                  selectedTileColor: myColor.withOpacity(0.2),
                 ),
                 const Divider(
                   height: 0,
@@ -123,7 +123,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         fontFamily: 'serif',
                         fontWeight: FontWeight.w500,
                         color: _tileSelected == 'orders'
-                            ? _myColor
+                            ? myColor
                             : Colors.grey[700]?.withOpacity(1.0)),
                   ),
                   onTap: () {
@@ -133,8 +133,8 @@ class _AppDrawerState extends State<AppDrawer> {
                     widget.pageController.jumpToPage(3);
                   },
                   selected: _tileSelected == 'orders',
-                  selectedColor: _myColor,
-                  selectedTileColor: _myColor.withOpacity(0.2),
+                  selectedColor: myColor,
+                  selectedTileColor: myColor.withOpacity(0.2),
                 ),
                 const Divider(
                   height: 0,
@@ -148,7 +148,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         fontFamily: 'serif',
                         fontWeight: FontWeight.w500,
                         color: _tileSelected == 'trans'
-                            ? _myColor
+                            ? myColor
                             : Colors.grey[700]?.withOpacity(1.0)),
                   ),
                   onTap: () {
@@ -157,8 +157,8 @@ class _AppDrawerState extends State<AppDrawer> {
                     });
                   },
                   selected: _tileSelected == 'trans',
-                  selectedColor: _myColor,
-                  selectedTileColor: _myColor.withOpacity(0.2),
+                  selectedColor: myColor,
+                  selectedTileColor: myColor.withOpacity(0.2),
                 ),
                 const Divider(
                   height: 0,
@@ -172,7 +172,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         fontFamily: 'serif',
                         fontWeight: FontWeight.w500,
                         color: _tileSelected == 'wish'
-                            ? _myColor
+                            ? myColor
                             : Colors.grey[700]?.withOpacity(1.0)),
                   ),
                   onTap: () {
@@ -181,8 +181,8 @@ class _AppDrawerState extends State<AppDrawer> {
                     });
                   },
                   selected: _tileSelected == 'wish',
-                  selectedColor: _myColor,
-                  selectedTileColor: _myColor.withOpacity(0.2),
+                  selectedColor: myColor,
+                  selectedTileColor: myColor.withOpacity(0.2),
                 ),
                 const Divider(
                   height: 0,
@@ -202,7 +202,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         fontFamily: 'serif',
                         fontWeight: FontWeight.w500,
                         color: _tileSelected == 'products'
-                            ? _myColor
+                            ? myColor
                             : Colors.grey[700]?.withOpacity(1.0)),
                   ),
                   onTap: () {
@@ -213,8 +213,8 @@ class _AppDrawerState extends State<AppDrawer> {
                         context, UserProductScreen.routeName);
                   },
                   selected: _tileSelected == 'products',
-                  selectedColor: _myColor,
-                  selectedTileColor: _myColor.withOpacity(0.2),
+                  selectedColor: myColor,
+                  selectedTileColor: myColor.withOpacity(0.2),
                 ),
                 ListTile(
                   leading: const Icon(Icons.share),
@@ -225,7 +225,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         fontFamily: 'serif',
                         fontWeight: FontWeight.w500,
                         color: _tileSelected == 'tell'
-                            ? _myColor
+                            ? myColor
                             : Colors.grey[700]?.withOpacity(1.0)),
                   ),
                   onTap: () {
@@ -234,8 +234,8 @@ class _AppDrawerState extends State<AppDrawer> {
                     });
                   },
                   selected: _tileSelected == 'tell',
-                  selectedColor: _myColor,
-                  selectedTileColor: _myColor.withOpacity(0.2),
+                  selectedColor: myColor,
+                  selectedTileColor: myColor.withOpacity(0.2),
                 ),
                 ListTile(
                   leading: const Icon(Icons.logout_rounded),
@@ -246,7 +246,7 @@ class _AppDrawerState extends State<AppDrawer> {
                         fontFamily: 'serif',
                         fontWeight: FontWeight.w500,
                         color: _tileSelected == 'logout'
-                            ? _myColor
+                            ? myColor
                             : Colors.grey[700]?.withOpacity(1.0)),
                   ),
                   onTap: () {
@@ -254,8 +254,8 @@ class _AppDrawerState extends State<AppDrawer> {
                       _tileSelected = 'logout';
                     });
                   },
-                  selectedColor: _myColor,
-                  selectedTileColor: _myColor.withOpacity(0.2),
+                  selectedColor: myColor,
+                  selectedTileColor: myColor.withOpacity(0.2),
                   selected: _tileSelected == 'logout',
                 ),
               ],

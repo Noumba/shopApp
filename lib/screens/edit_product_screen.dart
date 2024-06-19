@@ -192,6 +192,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           if (price == null) {
                             return 'Please enter a valid price';
                           }
+                          return null;
                         },
                         onSaved: (value) {
                           _editedProduct = Product(
@@ -243,9 +244,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
                             child: _imageUrlController.text.isEmpty
                                 ? const Text('Enter Image URL')
                                 : FittedBox(
+                                    fit: BoxFit.cover,
                                     child:
                                         Image.network(_imageUrlController.text),
-                                    fit: BoxFit.cover,
                                   ),
                           ),
                           Expanded(

@@ -23,12 +23,12 @@ class CartItems extends StatelessWidget {
       key: ValueKey(id),
       background: Container(
         color: Theme.of(context).colorScheme.error,
+        alignment: Alignment.centerRight,
         child: const Icon(
           Icons.delete,
           size: 40,
           color: Colors.white70,
         ),
-        alignment: Alignment.centerRight,
       ),
       direction: DismissDirection.endToStart,
       confirmDismiss: (direction) {
@@ -60,7 +60,7 @@ class CartItems extends StatelessWidget {
       },
       onDismissed: (direction) {
         Provider.of<Cart>(context, listen: false).removeItem(prodId);
-        print('Cart Item ' + prodId + ' removed from cart');
+        print('Cart Item $prodId removed from cart');
       },
       child: Card(
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 4.0),

@@ -54,13 +54,13 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> _bottomNavScreen = [
+    final List<Widget> bottomNavScreen = [
       ProductOverview(showOnlyFavorites: _showOnlyFavorites),
       const CartScreen()
     ];
 
     var height = MediaQuery.of(context).size.height;
-    final _myColor =
+    final myColor =
         ColorScheme.fromSwatch(primarySwatch: Colors.purple).secondary;
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
@@ -92,9 +92,9 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                   builder: (_, cart, ch) => Padding(
                     padding: const EdgeInsets.only(left: 14),
                     child: badge.Badge(
-                        child: ch!,
                         value: cart.itemCount.toString(),
-                        color: Colors.blue),
+                        color: Colors.blue,
+                        child: ch!),
                   ),
                 ),
                 label: 'Cart')
@@ -106,7 +106,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             Container(
               height: height * 0.4,
               width: double.infinity,
-              color: _myColor,
+              color: myColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -156,7 +156,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                           fontFamily: 'serif',
                           fontWeight: FontWeight.w500,
                           color: _tileSelected == 'profile'
-                              ? _myColor
+                              ? myColor
                               : Colors.grey[700]?.withOpacity(1.0)),
                     ),
                     onTap: () async {
@@ -170,8 +170,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                     },
                     style: ListTileStyle.drawer,
                     selected: _tileSelected == 'profile',
-                    selectedColor: _myColor,
-                    selectedTileColor: _myColor.withOpacity(0.2),
+                    selectedColor: myColor,
+                    selectedTileColor: myColor.withOpacity(0.2),
                   ),
                   const Divider(
                     height: 0,
@@ -185,7 +185,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                           fontFamily: 'serif',
                           fontWeight: FontWeight.w500,
                           color: _tileSelected == 'shop'
-                              ? _myColor
+                              ? myColor
                               : Colors.grey[700]?.withOpacity(1.0)),
                     ),
                     onTap: () async {
@@ -198,8 +198,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                       Navigator.pop(context);
                     },
                     selected: _tileSelected == 'shop',
-                    selectedColor: _myColor,
-                    selectedTileColor: _myColor.withOpacity(0.2),
+                    selectedColor: myColor,
+                    selectedTileColor: myColor.withOpacity(0.2),
                   ),
                   const Divider(
                     height: 0,
@@ -213,7 +213,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                           fontFamily: 'serif',
                           fontWeight: FontWeight.w500,
                           color: _tileSelected == 'orders'
-                              ? _myColor
+                              ? myColor
                               : Colors.grey[700]?.withOpacity(1.0)),
                     ),
                     onTap: () async {
@@ -225,8 +225,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                       Navigator.pop(context);
                     },
                     selected: _tileSelected == 'orders',
-                    selectedColor: _myColor,
-                    selectedTileColor: _myColor.withOpacity(0.2),
+                    selectedColor: myColor,
+                    selectedTileColor: myColor.withOpacity(0.2),
                   ),
                   const Divider(
                     height: 0,
@@ -240,7 +240,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                           fontFamily: 'serif',
                           fontWeight: FontWeight.w500,
                           color: _tileSelected == 'trans'
-                              ? _myColor
+                              ? myColor
                               : Colors.grey[700]?.withOpacity(1.0)),
                     ),
                     onTap: () async {
@@ -252,8 +252,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                       Navigator.pop(context);
                     },
                     selected: _tileSelected == 'trans',
-                    selectedColor: _myColor,
-                    selectedTileColor: _myColor.withOpacity(0.2),
+                    selectedColor: myColor,
+                    selectedTileColor: myColor.withOpacity(0.2),
                   ),
                   const Divider(
                     height: 0,
@@ -267,7 +267,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                           fontFamily: 'serif',
                           fontWeight: FontWeight.w500,
                           color: _tileSelected == 'wish'
-                              ? _myColor
+                              ? myColor
                               : Colors.grey[700]?.withOpacity(1.0)),
                     ),
                     onTap: () async {
@@ -279,8 +279,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                       Navigator.pop(context);
                     },
                     selected: _tileSelected == 'wish',
-                    selectedColor: _myColor,
-                    selectedTileColor: _myColor.withOpacity(0.2),
+                    selectedColor: myColor,
+                    selectedTileColor: myColor.withOpacity(0.2),
                   ),
                   const Divider(
                     height: 0,
@@ -300,7 +300,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                           fontFamily: 'serif',
                           fontWeight: FontWeight.w500,
                           color: _tileSelected == 'products'
-                              ? _myColor
+                              ? myColor
                               : Colors.grey[700]?.withOpacity(1.0)),
                     ),
                     onTap: () {
@@ -311,8 +311,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                           context, UserProductScreen.routeName);
                     },
                     selected: _tileSelected == 'products',
-                    selectedColor: _myColor,
-                    selectedTileColor: _myColor.withOpacity(0.2),
+                    selectedColor: myColor,
+                    selectedTileColor: myColor.withOpacity(0.2),
                   ),
                   ListTile(
                     leading: const Icon(Icons.share),
@@ -323,7 +323,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                           fontFamily: 'serif',
                           fontWeight: FontWeight.w500,
                           color: _tileSelected == 'tell'
-                              ? _myColor
+                              ? myColor
                               : Colors.grey[700]?.withOpacity(1.0)),
                     ),
                     onTap: () {
@@ -332,8 +332,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                       });
                     },
                     selected: _tileSelected == 'tell',
-                    selectedColor: _myColor,
-                    selectedTileColor: _myColor.withOpacity(0.2),
+                    selectedColor: myColor,
+                    selectedTileColor: myColor.withOpacity(0.2),
                   ),
                   ListTile(
                     leading: const Icon(Icons.logout_rounded),
@@ -344,7 +344,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                           fontFamily: 'serif',
                           fontWeight: FontWeight.w500,
                           color: _tileSelected == 'logout'
-                              ? _myColor
+                              ? myColor
                               : Colors.grey[700]?.withOpacity(1.0)),
                     ),
                     onTap: () {
@@ -352,8 +352,8 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
                         _tileSelected = 'logout';
                       });
                     },
-                    selectedColor: _myColor,
-                    selectedTileColor: _myColor.withOpacity(0.2),
+                    selectedColor: myColor,
+                    selectedTileColor: myColor.withOpacity(0.2),
                     selected: _tileSelected == 'logout',
                   ),
                 ],
@@ -405,12 +405,12 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               icon: const Icon(Icons.more_vert),
               itemBuilder: (_) => [
                     const PopupMenuItem(
-                      child: Text('Show All'),
                       value: FilterOptions.all,
+                      child: Text('Show All'),
                     ),
                     const PopupMenuItem(
-                      child: Text('Only Favorites'),
                       value: FilterOptions.favorites,
+                      child: Text('Only Favorites'),
                     )
                   ])
         ],
@@ -528,7 +528,7 @@ class _ProductOverviewState extends State<ProductOverview>
           ),
           SliverToBoxAdapter(
             child: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.15,
+              height: MediaQuery.of(context).size.height * 0.16,
               child: ListView(
                 primary: true,
                 scrollDirection: Axis.horizontal,
@@ -557,7 +557,7 @@ class _ProductOverviewState extends State<ProductOverview>
                               softWrap: true,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black54,
                               ),
@@ -590,7 +590,7 @@ class _ProductOverviewState extends State<ProductOverview>
                               softWrap: true,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black54,
                               ),
@@ -623,7 +623,7 @@ class _ProductOverviewState extends State<ProductOverview>
                               softWrap: true,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black54,
                               ),
@@ -656,7 +656,7 @@ class _ProductOverviewState extends State<ProductOverview>
                               softWrap: true,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black54,
                               ),
@@ -689,7 +689,7 @@ class _ProductOverviewState extends State<ProductOverview>
                               softWrap: true,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black54,
                               ),

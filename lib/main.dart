@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.grey[700]!.withBlue(650),
         title: Text(
           widget.title,
-          textScaleFactor: 1.15,
+          textScaler: const TextScaler.linear(1.5),
           style: TextStyle(
               color: Colors.white70.withOpacity(0.95), fontFamily: 'serif'),
         ),

@@ -10,7 +10,7 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    final _myColor =
+    final myColor =
         ColorScheme.fromSwatch(primarySwatch: Colors.purple).secondary;
     return Scaffold(
       backgroundColor: Colors.grey[100],
@@ -21,7 +21,7 @@ class RegisterScreen extends StatelessWidget {
               width: double.infinity,
               height: height * 0.4,
               decoration: BoxDecoration(
-                  color: _myColor,
+                  color: myColor,
                   borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(80.0))),
               child: Column(

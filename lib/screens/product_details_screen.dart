@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mytech1/models/custom_radio.dart';
 import 'package:mytech1/providers/cart.dart';
@@ -69,6 +68,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         backgroundColor: Colors.black26,
       ),
       bottomNavigationBar: BottomAppBar(
+        elevation: 5.0,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ElevatedButton(
@@ -85,10 +85,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       }),
                 ));
               },
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children: [
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Icon(Icons.shopping_cart_outlined),
@@ -100,7 +100,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 ],
               )),
         ),
-        elevation: 5.0,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -173,14 +172,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const FittedBox(
+                            fit: BoxFit.contain,
+                            alignment: Alignment.centerLeft,
                             child: Text(
                               'Available colors',
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   color: Colors.black87),
                             ),
-                            fit: BoxFit.contain,
-                            alignment: Alignment.centerLeft,
                           ),
                           const SizedBox(
                             height: 10,
@@ -207,14 +206,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             height: 20,
                           ),
                           const FittedBox(
+                            fit: BoxFit.contain,
+                            alignment: Alignment.centerLeft,
                             child: Text(
                               'Available Sizes',
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   color: Colors.black87),
                             ),
-                            fit: BoxFit.contain,
-                            alignment: Alignment.centerLeft,
                           ),
                           const SizedBox(
                             height: 10,
@@ -242,14 +241,14 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             height: 20,
                           ),
                           const FittedBox(
+                            fit: BoxFit.contain,
+                            alignment: Alignment.centerLeft,
                             child: Text(
                               'Description',
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   color: Colors.black87),
                             ),
-                            fit: BoxFit.contain,
-                            alignment: Alignment.centerLeft,
                           ),
                         ],
                       ),

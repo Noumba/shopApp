@@ -55,16 +55,6 @@ class ProductItem extends StatelessWidget {
               },
               icon: const Icon(Icons.shopping_cart_outlined)),
         ),
-        child: GestureDetector(
-          onTap: () {
-            Navigator.of(context)
-                .pushNamed(ProductDetailsScreen.routeName, arguments: product);
-          },
-          child: Image(
-            image: NetworkImage(product.url),
-            fit: BoxFit.cover,
-          ),
-        ),
         footer: GridTileBar(
           trailing: IconButton(
               alignment: Alignment.bottomRight,
@@ -92,6 +82,16 @@ class ProductItem extends StatelessWidget {
           title: const SizedBox(
             width: 20.0,
             child: Text(' '),
+          ),
+        ),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.of(context)
+                .pushNamed(ProductDetailsScreen.routeName, arguments: product);
+          },
+          child: Image(
+            image: NetworkImage(product.url),
+            fit: BoxFit.cover,
           ),
         ),
       ),

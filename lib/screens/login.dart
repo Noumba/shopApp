@@ -7,7 +7,7 @@ class LoginScreen extends StatelessWidget {
   static const routeName = '/login';
   @override
   Widget build(BuildContext context) {
-    final _myColor = ColorScheme.fromSwatch(primarySwatch: Colors.purple)
+    final myColor = ColorScheme.fromSwatch(primarySwatch: Colors.purple)
         .secondary
         .withOpacity(1.0);
     var width = MediaQuery.of(context).size.width;
@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
                 width: width * 0.5,
                 child: Image(
                   image: const AssetImage('asset/shopping.png'),
-                  color: _myColor,
+                  color: myColor,
                 ),
               ),
               const FittedBox(
@@ -132,7 +132,7 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: 'sans serif',
                             fontSize: 16,
-                            color: _myColor,
+                            color: myColor,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -183,9 +183,9 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   TextButton.icon(
                     style: ButtonStyle(
-                        fixedSize: MaterialStateProperty.all(
+                        fixedSize: WidgetStateProperty.all(
                             Size.fromWidth(width * 0.4)),
-                        backgroundColor: MaterialStateProperty.all(_myColor)),
+                        backgroundColor: WidgetStateProperty.all(myColor)),
                     onPressed: () {},
                     icon: Icon(
                       Icons.facebook_outlined,
@@ -199,10 +199,10 @@ class LoginScreen extends StatelessWidget {
                   ),
                   TextButton.icon(
                     style: ButtonStyle(
-                        fixedSize: MaterialStateProperty.all(
+                        fixedSize: WidgetStateProperty.all(
                             Size.fromWidth(width * 0.4)),
                         backgroundColor:
-                            MaterialStateProperty.all(const Color(0xffea4335))),
+                            WidgetStateProperty.all(const Color(0xffea4335))),
                     onPressed: () {},
                     icon: Image(
                       color: Colors.white70,
